@@ -59,10 +59,10 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://QianYue-Official.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://QianYue-Official.github.io"></form>
       </div>
     </div>
   </div>
@@ -70,6 +70,64 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-Flask基础回顾" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/06/28/Flask%E5%9F%BA%E7%A1%80%E5%9B%9E%E9%A1%BE/" class="article-date">
+  <time class="dt-published" datetime="2022-06-28T07:37:14.000Z" itemprop="datePublished">2022-06-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/06/28/Flask%E5%9F%BA%E7%A1%80%E5%9B%9E%E9%A1%BE/">Flask基础回顾</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Flask的基础回顾</p>
+<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><p>推荐使用virtualenv单独创建flask的环境</p>
+<p>直接使用pip安装即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install virtualenv</span><br><span class="line">pip install flask</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-运行"><a href="#2-运行" class="headerlink" title="2.运行"></a>2.运行</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">hello_world</span>():  <span class="comment"># put application&#x27;s code here</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Hello World!&#x27;</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
+
+<p>其中route()函数为装饰器</p>
+<p>run()函数的参数如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">app.run(host, port, debug, options)</span><br><span class="line"># 监听主机名、端口、调试信息、转发到底层的选项服务器</span><br></pre></td></tr></table></figure>
+
+<p>直接运行</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python &lt;shell.py&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-路由"><a href="#3-路由" class="headerlink" title="3.路由"></a>3.路由</h2><p>使用route()装饰器可以将url绑定至函数，也可以使用application对象中的add_url_rule()函数进行绑定</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/hello&#x27;</span></span>)</span></span><br><span class="line">app.add_url_rule(<span class="string">&#x27;/&#x27;</span>,<span class="string">&#x27;hello&#x27;</span>,hello_world)</span><br></pre></td></tr></table></figure>
+
+<p>这里可以直接访问域名&#x2F;hello来访问hello_world()函数的输出内容</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qianyue-official.github.io/2022/06/28/Flask%E5%9F%BA%E7%A1%80%E5%9B%9E%E9%A1%BE/" data-id="cl4xwdaqp00008ov14nwv389y" data-title="Flask基础回顾" class="article-share-link">Teilen</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flask/" rel="tag">Flask</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-Linux基本操作" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -162,7 +220,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qianyue-official.github.io/2022/06/28/Linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" data-id="cl4xnroh70000qov1dhax258f" data-title="Linux基本操作[Part.1]" class="article-share-link">Share</a>
+      <a data-url="http://qianyue-official.github.io/2022/06/28/Linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" data-id="cl4xwdaqy00038ov1g4428g6n" data-title="Linux基本操作[Part.1]" class="article-share-link">Teilen</a>
       
       
       
@@ -222,7 +280,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qianyue-official.github.io/2022/06/27/Hexo%E7%9A%84%E7%AE%80%E5%8D%95%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" data-id="cl4xnrohi0003qov14bcsb8pk" data-title="Hexo的简单部署与基本命令" class="article-share-link">Share</a>
+      <a data-url="http://qianyue-official.github.io/2022/06/27/Hexo%E7%9A%84%E7%AE%80%E5%8D%95%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" data-id="cl4xwdaqv00018ov1bjxq3u0k" data-title="Hexo的简单部署与基本命令" class="article-share-link">Teilen</a>
       
       
       
@@ -249,7 +307,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/" rel="tag">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
     </div>
   </div>
 
@@ -259,14 +317,14 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a>
+      <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a></li></ul>
     </div>
@@ -276,9 +334,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/06/28/Flask%E5%9F%BA%E7%A1%80%E5%9B%9E%E9%A1%BE/">Flask基础回顾</a>
+          </li>
         
           <li>
             <a href="/2022/06/28/Linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">Linux基本操作[Part.1]</a>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Flask基础回顾 | 浅月月的个人小站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Flask的基础回顾 1.安装推荐使用virtualenv单独创建flask的环境 直接使用pip安装即可 12pip install virtualenvpip install flask  2.运行1234567from flask import Flaskapp &#x3D; Flask(__name__)@app.route(&amp;#x27;&#x2F;&amp;#x27;)def hello_world():  # p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flask基础回顾">
+<meta property="og:url" content="http://qianyue-official.github.io/2022/06/28/Flask%E5%9F%BA%E7%A1%80%E5%9B%9E%E9%A1%BE/index.html">
+<meta property="og:site_name" content="浅月月的个人小站">
+<meta property="og:description" content="Flask的基础回顾 1.安装推荐使用virtualenv单独创建flask的环境 直接使用pip安装即可 12pip install virtualenvpip install flask  2.运行1234567from flask import Flaskapp &#x3D; Flask(__name__)@app.route(&amp;#x27;&#x2F;&amp;#x27;)def hello_world():  # p">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-06-28T07:37:14.000Z">
+<meta property="article:modified_time" content="2022-06-28T08:18:16.252Z">
+<meta property="article:author" content="浅月">
+<meta property="article:tag" content="Flask">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="浅月月的个人小站" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">浅月月的个人小站</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://QianYue-Official.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Flask基础回顾" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/06/28/Flask%E5%9F%BA%E7%A1%80%E5%9B%9E%E9%A1%BE/" class="article-date">
+  <time class="dt-published" datetime="2022-06-28T07:37:14.000Z" itemprop="datePublished">2022-06-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Flask基础回顾
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Flask的基础回顾</p>
+<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><p>推荐使用virtualenv单独创建flask的环境</p>
+<p>直接使用pip安装即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install virtualenv</span><br><span class="line">pip install flask</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-运行"><a href="#2-运行" class="headerlink" title="2.运行"></a>2.运行</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">hello_world</span>():  <span class="comment"># put application&#x27;s code here</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Hello World!&#x27;</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
+
+<p>其中route()函数为装饰器</p>
+<p>run()函数的参数如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">app.run(host, port, debug, options)</span><br><span class="line"># 监听主机名、端口、调试信息、转发到底层的选项服务器</span><br></pre></td></tr></table></figure>
+
+<p>直接运行</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python &lt;shell.py&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-路由"><a href="#3-路由" class="headerlink" title="3.路由"></a>3.路由</h2><p>使用route()装饰器可以将url绑定至函数，也可以使用application对象中的add_url_rule()函数进行绑定</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/hello&#x27;</span></span>)</span></span><br><span class="line">app.add_url_rule(<span class="string">&#x27;/&#x27;</span>,<span class="string">&#x27;hello&#x27;</span>,hello_world)</span><br></pre></td></tr></table></figure>
+
+<p>这里可以直接访问域名&#x2F;hello来访问hello_world()函数的输出内容</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qianyue-official.github.io/2022/06/28/Flask%E5%9F%BA%E7%A1%80%E5%9B%9E%E9%A1%BE/" data-id="cl4xwdaqp00008ov14nwv389y" data-title="Flask基础回顾" class="article-share-link">Teilen</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flask/" rel="tag">Flask</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/06/28/Linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">Linux基本操作[Part.1]</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/" rel="tag">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/06/28/Flask%E5%9F%BA%E7%A1%80%E5%9B%9E%E9%A1%BE/">Flask基础回顾</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/28/Linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">Linux基本操作[Part.1]</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/27/Hexo%E7%9A%84%E7%AE%80%E5%8D%95%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/">Hexo的简单部署与基本命令</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 浅月<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
