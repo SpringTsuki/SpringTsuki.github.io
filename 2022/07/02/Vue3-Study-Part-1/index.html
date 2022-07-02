@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Vue3 Study [Part.1] | 浅月月的个人小站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Vue3终于起步啦！ 1.部署这里直接使用的是HBuilder X IDE一键部署 也可以通过node.js对vue-cli钩子进行构建 遇到的问题：出现错误：Uncaught ReferenceError: Vue is not defined 解决办法：只需要在html页面引入vue.js的内容就可以，如果没有可以去官页下载 出现异常：在App.vue下的template异常的问题 解决办法：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue3 Study [Part.1]">
+<meta property="og:url" content="http://qianyue-official.github.io/2022/07/02/Vue3-Study-Part-1/index.html">
+<meta property="og:site_name" content="浅月月的个人小站">
+<meta property="og:description" content="Vue3终于起步啦！ 1.部署这里直接使用的是HBuilder X IDE一键部署 也可以通过node.js对vue-cli钩子进行构建 遇到的问题：出现错误：Uncaught ReferenceError: Vue is not defined 解决办法：只需要在html页面引入vue.js的内容就可以，如果没有可以去官页下载 出现异常：在App.vue下的template异常的问题 解决办法：">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-02T11:12:23.000Z">
+<meta property="article:modified_time" content="2022-07-02T12:41:50.954Z">
+<meta property="article:author" content="浅月">
+<meta property="article:tag" content="Vue3">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="浅月月的个人小站" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">浅月月的个人小站</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Buscar"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://QianYue-Official.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Vue3-Study-Part-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/07/02/Vue3-Study-Part-1/" class="article-date">
+  <time class="dt-published" datetime="2022-07-02T11:12:23.000Z" itemprop="datePublished">2022-07-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Vue3 Study [Part.1]
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Vue3终于起步啦！</p>
+<h1 id="1-部署"><a href="#1-部署" class="headerlink" title="1.部署"></a>1.部署</h1><p>这里直接使用的是HBuilder X IDE一键部署</p>
+<p>也可以通过node.js对vue-cli钩子进行构建</p>
+<h3 id="遇到的问题："><a href="#遇到的问题：" class="headerlink" title="遇到的问题："></a>遇到的问题：</h3><p>出现错误：Uncaught ReferenceError: Vue is not defined</p>
+<p>解决办法：只需要在html页面引入vue.js的内容就可以，如果没有可以去官页下载</p>
+<p>出现异常：在App.vue下的template异常的问题</p>
+<p>解决办法：不要写在这儿！写到隔壁的html去！</p>
+<h1 id="2-起步"><a href="#2-起步" class="headerlink" title="2.起步"></a>2.起步</h1><h3 id="1-初始应用"><a href="#1-初始应用" class="headerlink" title="1.初始应用"></a>1.初始应用</h3><p>Vue.js的核心内容是一个允许采用简洁模板的语法来声明式地将数据渲染进DOM系统</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;counter&quot;</span>&gt;</span> //使用counter容器</span><br><span class="line">	Counter: &#123;&#123; counter &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Counter</span> = &#123;</span><br><span class="line">	<span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> &#123;</span><br><span class="line">			<span class="attr">counter</span>: <span class="number">0</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//构建一个函数，在函数内部写入功能，这是一个简单的返回json数据的函数</span></span><br><span class="line"><span class="title class_">Vue</span>.<span class="title function_">createApp</span>(<span class="title class_">Counter</span>).<span class="title function_">mount</span>(<span class="string">&#x27;#counter&#x27;</span>)</span><br><span class="line"><span class="comment">//在这里把Counter函数绑定至容器counter，让前台html显示</span></span><br></pre></td></tr></table></figure>
+
+<p>当然，也可以使用下面的方法注册全局组件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> app = <span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">your</span> <span class="attr">options</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">&#125;)</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qianyue-official.github.io/2022/07/02/Vue3-Study-Part-1/" data-id="cl53vlx890004esv1a8f40cqf" data-title="Vue3 Study [Part.1]" class="article-share-link">Compartir</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue3/" rel="tag">Vue3</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/06/28/Flask%E5%9F%BA%E7%A1%80%E5%9B%9E%E9%A1%BE/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Viejo</strong>
+      <div class="article-nav-title">Flask基础回顾</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/" rel="tag">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue3/" rel="tag">Vue3</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nube de Tags</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Vue3/" style="font-size: 10px;">Vue3</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archivos</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Posts recientes</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/07/02/Vue3-Study-Part-1/">Vue3 Study [Part.1]</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/28/Flask%E5%9F%BA%E7%A1%80%E5%9B%9E%E9%A1%BE/">Flask基础回顾</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/28/Linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">Linux基本操作[Part.1]</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/27/Hexo%E7%9A%84%E7%AE%80%E5%8D%95%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/">Hexo的简单部署与基本命令</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 浅月<br>
+      Construido por <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
